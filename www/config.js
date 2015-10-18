@@ -1,0 +1,1 @@
+persistence.debug = true;
