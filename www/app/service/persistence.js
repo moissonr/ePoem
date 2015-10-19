@@ -2,6 +2,8 @@ app.service('Persistence', function($q, $ionicPlatform, $cordovaSQLite){
 
   self = this;
 
+  persistence.debug = true;
+
   persistence.store.cordovasql.config(
     persistence,
     'ePoem.db',
@@ -39,7 +41,7 @@ app.service('Persistence', function($q, $ionicPlatform, $cordovaSQLite){
   entities.Poem.index('wishlist');
   entities.Poem.index('heart');
   entities.Poem.index('saved');
-  // avoid duplicates during dev, when in prod should probably be ['title', 'author']
+  // avoid duplicates during dev
   entities.Poem.index('title', {unique: true});
   entities.Author.index('name', {unique: true});
 
